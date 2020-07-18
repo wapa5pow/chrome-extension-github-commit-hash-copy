@@ -1,0 +1,12 @@
+{
+  "name": "GitHub commit hash copy",
+  "description": "Show icon on GitHub to copy commit hash to clipboard",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "manifest_version": 2
+}
