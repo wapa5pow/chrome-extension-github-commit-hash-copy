@@ -1,10 +1,5 @@
 window.onload = function () {
-  for (let i = 0; i < 10; i++) {
-    // apply to lazy loaded commit hash
-    setTimeout(function () {
-      showClipboard();
-    }, 500 * i);
-  }
+  showClipboard();
 };
 
 const done = new Set();
@@ -22,7 +17,9 @@ function showClipboard() {
     )) {
       const text = node.text;
       const aPathname = new URL(node.href).pathname;
-      if (!aPathname.includes("/commit/")) {
+      if (
+        !(aPathname.includes("/commit/") || aPathname.includes("/commits/"))
+      ) {
         continue;
       }
       const aPaths = aPathname.split("/");
@@ -40,4 +37,9 @@ function showClipboard() {
       node.parentNode.insertBefore(div.firstChild, node.nextSibling);
     }
   } catch (_) {}
+
+  // check for lazy load
+  setTimeout(function () {
+    showClipboard();
+  }, 1000);
 }
