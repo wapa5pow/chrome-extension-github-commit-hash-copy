@@ -4,6 +4,11 @@
 
 ## Install
 
+## From Chrome Web Store
+
+[GitHub commit hash copy | Chrome Web Store](https://chrome.google.com/webstore/detail/github-commit-hash-copy/jgjckcfnlhhpnlccmagaifpkbomomgko?hl=en&authuser=0)
+
+
 ## From source code
 
 1. Donwload source code.
