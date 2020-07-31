@@ -15,6 +15,10 @@ function showClipboard() {
     for (const node of document.querySelectorAll(
       `a[href*="${commitPathPrefix}"]`
     )) {
+      // Skip if clipboard already appeared.
+      if (node.nextSibling && node.nextSibling.tagName == 'CLIPBOARD-COPY') {
+        continue;
+      }
       const text = node.text;
       const aPathname = new URL(node.href).pathname;
       if (
@@ -36,7 +40,7 @@ function showClipboard() {
       div.innerHTML = innerHtml.trim();
       node.parentNode.insertBefore(div.firstChild, node.nextSibling);
     }
-  } catch (_) {}
+  } catch (_) { }
 
   // check for lazy load
   setTimeout(function () {
