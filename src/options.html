@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitHub Commit Hash Copy Extension Options</title>
+  </head>
+  <body>
+    <h1>GitHub Commit Hash Copy Extension Options</h1>
+    <h2>URL Prefix Allow List</h2>
+    <div>
+      List allowed URL prefix which commit hash clipboard shows on. <br />
+      For example,
+      <var>
+        https://github.com/wapa5pow/chrome-extension-github-commit-hash-copy
+      </var>
+      is the valid URL prefx.<br />
+      Multiple URL prefix can be input with new line.<br />
+      If it's empty, all URL shows commit hash cliboard.<br />
+    </div>
+    <br />
+    <textarea id="urls" rows="4" cols="100"></textarea>
+    <br />
+
+    <button id="save">Save</button>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

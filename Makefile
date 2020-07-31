@@ -1,2 +1,2 @@
 build:
-	zip release.zip images/* content.js manifest.json 
+	zip release.zip images/* src/* manifest.json 

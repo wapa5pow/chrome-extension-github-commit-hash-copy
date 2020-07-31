@@ -1,5 +1,20 @@
 window.onload = function () {
-  showClipboard();
+  chrome.storage.sync.get({
+    urls: '',
+  }, function (items) {
+    const prefixUrls = items.urls.trim().split("\n").filter(v => v != '')
+    if (prefixUrls.length === 0) {
+      showClipboard();
+      return;
+    }
+    for (const url of prefixUrls) {
+      if (window.location.href.startsWith(url)) {
+        showClipboard()
+        return;
+      }
+    }
+  });
+
 };
 
 const done = new Set();
