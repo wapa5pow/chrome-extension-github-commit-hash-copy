@@ -1,14 +1,20 @@
 {
   "name": "GitHub commit hash copy",
   "description": "Show icon on GitHub to copy commit hash to clipboard",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "content_scripts": [
     {
-      "matches": ["https://github.com/*"],
-      "js": ["src/content.js"]
+      "matches": [
+        "https://github.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ]
     }
   ],
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "options_page": "src/options.html",
   "icons": {
     "16": "images/icon16.png",
