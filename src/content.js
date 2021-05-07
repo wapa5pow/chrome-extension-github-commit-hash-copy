@@ -34,7 +34,7 @@ function showClipboard() {
       if (node.nextSibling && node.nextSibling.tagName == 'CLIPBOARD-COPY') {
         continue;
       }
-      const text = node.text;
+      const text = node.text.trim();
       const aPathname = new URL(node.href).pathname;
       if (
         !(aPathname.includes("/commit/") || aPathname.includes("/commits/"))
